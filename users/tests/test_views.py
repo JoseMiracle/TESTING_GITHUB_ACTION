@@ -53,7 +53,7 @@ class TestInformationCollectedFromUser(TestCase):
         }
 
         with self.assertRaises(IntegrityError):
-            response = client.post(path=self.url, data=invalid_information)
+            response = client.post(path=self.url, data=invalid_information) # noqa
 
             user_information = UserInformation.objects.filter(
                 first_name=invalid_information["first_name"],
