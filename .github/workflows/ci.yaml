@@ -23,8 +23,12 @@ jobs:
               pip install -r requirements.txt
         - name: Check irregular imports
           run: |
-              cd tests
               flake8
+
+        - name: Check written tests
+          run: |
+            python manage.py test 
+              
 
 
 
