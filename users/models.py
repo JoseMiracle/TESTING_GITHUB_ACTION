@@ -1,16 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, PermissionsMixin
 
 
-class CustomUser(AbstractUser):
-    username = None
-    email = models.EmailField(max_length=40, unique=True)
-    password = models.CharField(max_length=50)
-
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-
-
-    
-    
+class UserInformation(models.Model):
+    first_name = models.CharField(max_length=60)
+    email = models.EmailField(max_length=6, unique=True)
+    hobbies = models.CharField(max_length=60)
+    about_me = models.TextField(max_length=1000)
